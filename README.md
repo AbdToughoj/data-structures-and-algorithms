@@ -7,3 +7,15 @@
 </br>
 
 [Code Challenge 05: Linked List Implementation](</code_challeng05(linked-list)/linked-list.md>)
+</br>
+
+[Code Challenge 06: Linked List Insertions](</code_challenge06(linked_list_insertions)/linked-list-insertions.md>)
+</br>
+
+[Code Challenge 07: Linked List Kth](</code_challenge07(linked_list_kth)/linked_list_kth.md>)
+</br>
+
+[Code Challenge 08: Linked List Zip](</code_challenge08(linked-list-zip)/linked-list-zip.md>)
+</br>
+
+[Code Challenge 10: Stack And Queue](</code_challenge10(stack-and-queue)/stack-and-queue.md>)

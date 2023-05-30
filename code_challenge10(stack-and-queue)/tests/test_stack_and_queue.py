@@ -42,6 +42,10 @@ def test_stack_peek_empty():
     else:
         assert False, "Exception not raised"
 
+def test_stack_instantiation():
+    stack = Stack()
+    assert stack.is_empty()
+
 def test_stack_pop_empty():
     stack = Stack()
     try:
