@@ -1,36 +1,53 @@
 from linked_list_zip.linked_list_zip import LinkedList,zipLists
-def test_zipLists():
+def test_zipLists_equal_lengths():
     list1 = LinkedList()
     list1.append(1)
+    list1.append(2)
     list1.append(3)
+
+    list2 = LinkedList()
+    list2.append('A')
+    list2.append('B')
+    list2.append('C')
+
+    result = zipLists(list1, list2)
+
+    expected = "1 -> A -> 2 -> B -> 3 -> C -> NONE"
+    actual = result.to_string()
+    assert actual == expected
+
+
+def test_zipLists_list1_longer():
+    list1 = LinkedList()
+    list1.append(1)
+    list1.append(2)
+    list1.append(3)
+    list1.append(4)
+
+    list2 = LinkedList()
+    list2.append('A')
+    list2.append('B')
+
+    result = zipLists(list1, list2)
+
+    expected = "1 -> A -> 2 -> B -> 3 -> 4 -> NONE"
+    actual = result.to_string()
+    assert actual == expected
+
+
+def test_zipLists_list1_shorter():
+    list1 = LinkedList()
+    list1.append(1)
     list1.append(2)
 
     list2 = LinkedList()
-    list2.append(5)
-    list2.append(9)
-    list2.append(4)
+    list2.append('A')
+    list2.append('B')
+    list2.append('C')
+    list2.append('D')
 
     result = zipLists(list1, list2)
 
-    assert result.head.value == 1
-    assert result.head.next.value == 5
-    assert result.head.next.next.value == 3
-    assert result.head.next.next.next.value == 9
-    assert result.head.next.next.next.next.value == 2
-    assert result.head.next.next.next.next.next.value == 4
-    assert result.head.next.next.next.next.next.next is None
-
-def test_zipLists_emptyList():
-    list1 = LinkedList()
-
-    list2 = LinkedList()
-    list2.append(5)
-    list2.append(9)
-    list2.append(4)
-
-    result = zipLists(list1, list2)
-
-    assert result.head.value == 5
-    assert result.head.next.value == 9
-    assert result.head.next.next.value == 4
-    assert result.head.next.next.next is None
+    expected = "1 -> A -> 2 -> B -> C -> D -> NONE"
+    actual = result.to_string()
+    assert actual == expected

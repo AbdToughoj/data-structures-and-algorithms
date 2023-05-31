@@ -1,13 +1,29 @@
 class Node:
     def __init__(self, value):
+        """
+        Initializes a new instance of the Node class.
+
+        Args:
+            value: The value to be stored in the node.
+        """
         self.value = value
         self.next = None
 
+
 class LinkedList:
     def __init__(self):
+        """
+        Initializes a new instance of the LinkedList class.
+        """
         self.head = None
 
     def append(self, value):
+        """
+        Appends a new node with the given value to the linked list.
+
+        Args:
+            value: The value to be appended to the linked list.
+        """
         new_node = Node(value)
         if not self.head:
             self.head = new_node
@@ -17,38 +33,57 @@ class LinkedList:
                 current = current.next
             current.next = new_node
 
+    def to_string(self):
+        """
+        Generates a string representation of the linked list.
+
+        Returns:
+            A string representing the values in the linked list, formatted as:
+            "{ a } -> { b } -> { c } -> NONE"
+        """
+        values = []
+        current = self.head
+        while current:
+            values.append(str(current.value))
+            current = current.next
+        return ' -> '.join(values) + ' -> NONE'
+
+
 def zipLists(list1, list2):
-    # Edge cases: if either list is empty, return the other list
+    """
+    Zips two linked lists together into one, alternating nodes between the two lists.
+
+    Args:
+        list1: The first linked list.
+        list2: The second linked list.
+
+    Returns:
+        A new linked list that contains nodes from list1 and list2 alternately.
+    """
     if not list1.head:
         return list2
     if not list2.head:
         return list1
 
-    # Create a dummy head node for the new linked list
-    dummy_head = Node(None)
-    current = dummy_head
+    starting_head = Node(None)
+    current = starting_head
 
     while list1.head and list2.head:
-        # Take a node from list1 and append it to the new list
         current.next = list1.head
         list1.head = list1.head.next
         current = current.next
 
-        # Take a node from list2 and append it to the new list
         current.next = list2.head
         list2.head = list2.head.next
         current = current.next
 
-    # If list1 still has remaining nodes, append them to the new list
     if list1.head:
         current.next = list1.head
 
-    # If list2 still has remaining nodes, append them to the new list
     if list2.head:
         current.next = list2.head
 
-    # Create a new linked list instance and set its head
     result = LinkedList()
-    result.head = dummy_head.next
+    result.head = starting_head.next
 
     return result
