@@ -19,3 +19,6 @@
 </br>
 
 [Code Challenge 10: Stack And Queue](</code_challenge10(stack-and-queue)/stack-and-queue.md>)
+</br>
+
+[Code Challenge 11: Stack And Queue](</code_challenge11(stack_queue_pseudo)/stack_queue_pseudo.md>)
