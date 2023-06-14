@@ -21,10 +21,10 @@
 [Code Challenge 10: Stack And Queue](</code_challenge10(stack-and-queue)/stack-and-queue.md>)
 </br>
 
-[Code Challenge 11: Stack And Queue](</code_challenge11(stack_queue_pseudo)/stack_queue_pseudo.md>)
+[Code Challenge 11: Stack And Queue Pseudo](</code_challenge11(stack_queue_pseudo)/stack_queue_pseudo.md>)
 </br>
 
-[Code Challenge 12: Stack And Queue](</code_challenge12(stack_queue_animal_shelter)/stack_queue_animal_shelter.md>)
+[Code Challenge 12: Stack And Queue Animal Shelter](</code_challenge12(stack_queue_animal_shelter)/stack_queue_animal_shelter.md>)
 </br>
 
-[Code Challenge 13: Stack And Queue](</code_challenge13(stack_queue_brackets)/stack_queue_brackets.md>)
+[Code Challenge 13: Stack And Queue Brackets](</code_challenge13(stack_queue_brackets)/stack_queue_brackets.md>)
