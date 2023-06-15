@@ -28,3 +28,7 @@
 </br>
 
 [Code Challenge 13: Stack And Queue Brackets](</code_challenge13(stack_queue_brackets)/stack_queue_brackets.md>)
+
+[Code Challenge 15: Trees](</code_challenge15(Trees)/Trees.md>)
+
+[Code Challenge 16: Tree Max](</code_challenge16(tree_max)/tree_max.md>)
