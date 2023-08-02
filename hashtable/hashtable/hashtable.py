@@ -17,20 +17,20 @@ class LinkedList:
   '''
   what : A class representing a singly linked list data structure
   '''
-def __init__(self):
-  self.head = None
+  def __init__(self):
+    self.head = None
 
 
-def insert (self, value):
-  '''
-  insert a new node with the given value at the begining of     the linked list.
-  args: value
-  output : none
-  
-  '''
-  new_node = Node(value)
-  new_node.next = self.head
-  self.head = new_node
+  def insert (self, value):
+    '''
+    insert a new node with the given value at the begining of     the linked list.
+    args: value
+    output : none
+    
+    '''
+    new_node = Node(value)
+    new_node.next = self.head
+    self.head = new_node
 
 
 class HashTable:
@@ -105,23 +105,14 @@ class HashTable:
     A method to check if the given key exist in the hashtable.
     arg: key
     output: boolean
-    '''
-    # index=self.__hash(key)
-    # bucket = self.__buckets[index]
-    # if bucket is not None : 
-    #   curr = bucket.head
-    #   while curr :
-    #     if curr.value[0] == key :
-    #       return True
-    #     curr = curr.next  
-    #   return False  
+    ''' 
     if self.get(key):
       return True
     return False  
 
     
 
-  def keys(self):
+  def get_keys(self):
     '''
     args : none
     Returns a list of all the  keys present in the Hashtable.
