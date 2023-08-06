@@ -211,7 +211,7 @@ class HashTable:
     '''
     return self.keys
         
-def treeIntersection(tree1,tree2):
+def tree_intersection(tree1,tree2):
     '''
     args : two binary search tree
     return : list of common values
@@ -233,20 +233,19 @@ if __name__ == "__main__":
 
 
     tree1 = Binary_search()
-    tree1.add(3)
-    tree1.add(1)
     tree1.add(5)
+    tree1.add(3)
+    tree1.add(8)
     tree1.add(2)
     tree1.add(4)
 
     tree2 = Binary_search()
-    tree2.add(5)
-    tree2.add(2)
-    tree2.add(7)
+    tree2.add(3)
     tree2.add(6)
     tree2.add(8)
+    tree2.add(2)
+    tree2.add(9)
 
-
-    print(treeIntersection(tree1, tree2))
+    print(tree_intersection(tree1, tree2))
 
 
