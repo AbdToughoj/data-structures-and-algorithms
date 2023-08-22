@@ -154,23 +154,66 @@ class Graph:
 
     def depth_first(self, start_vertex):
         '''
-        Performs depth-first traversal of the graph starting from the given vertex.
+        Performs depth-first pre-order traversal of the graph starting from the given vertex.
         Arguments:
         - start_vertex: The starting vertex for traversal
         Returns:
-        List of vertices in pre-order depth-first order
+        List of vertices in depth-first pre-order traversal order
         '''
-        def dfs_recursive(vertex, visited, result):
+        result = []
+        visited = set()
+
+        def dfs_recursive(vertex):
+            nonlocal result
             visited.add(vertex)
             result.append(vertex.value)
+
             neighbors = self.get_neighbors(vertex)
             for edge in neighbors:
                 neighbor = edge.vertex
                 if neighbor not in visited:
-                    dfs_recursive(neighbor, visited, result)
+                    dfs_recursive(neighbor)
 
-        result = []
-        visited = set()
-        start_vertex = Vertex(start_vertex)
-        dfs_recursive(start_vertex, visited, result)
+        start_vertex_obj = None
+        for vertex_obj in self.__adj_list:
+            if vertex_obj.value == start_vertex:
+                start_vertex_obj = vertex_obj
+                break
+
+        if start_vertex_obj:
+            dfs_recursive(start_vertex_obj)
+
         return result
+    
+if __name__ == '__main__':
+    graph = Graph()
+    a = graph.add_vertex('A')
+    b = graph.add_vertex('B')
+    c = graph.add_vertex('C')
+    d = graph.add_vertex('D')
+    e = graph.add_vertex('E')
+    f = graph.add_vertex('F')
+    h = graph.add_vertex('H')
+    g = graph.add_vertex('G')
+
+    graph.add_edge(a, b)
+    graph.add_edge(b, a)
+    graph.add_edge(b, c)
+    graph.add_edge(c, b)
+    graph.add_edge(d, a)
+    graph.add_edge(d, b)
+    graph.add_edge(d, e)
+    graph.add_edge(d, h)
+    graph.add_edge(d, f)
+    graph.add_edge(e, d)
+    graph.add_edge(f, h)
+    graph.add_edge(f, d)
+    graph.add_edge(h, f)
+    graph.add_edge(h, d)
+    graph.add_edge(c, g)
+    graph.add_edge(g, c)
+
+    start_node = 'A'
+    dfs_result = graph.depth_first(start_node)
+    print(", ".join(dfs_result))
+
