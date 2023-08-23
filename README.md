@@ -33,4 +33,4 @@
 
 [Code Challenge 16: Tree Max](</code_challenge16(tree_max)/tree_max.md>)
 
-[Code Challenge 35: Graph](/graph/README.md)
+[Code Challenge 27: Merge Sort](/sorting/README.md)
